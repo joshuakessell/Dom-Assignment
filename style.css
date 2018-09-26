@@ -1,0 +1,77 @@
+body {
+     
+    background-color: white;
+}
+
+.left-nav a:hover {
+    color: #ffffff;
+}
+
+#left-nav {
+    height: 100%;
+    width: 220px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(53, 53, 53);
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.btn-left {
+    background-color: rgb(53,53,53);
+    border-width: 0px;
+    margin: 10px;
+    margin-left: 50px;
+    font-weight: bolder;
+    color: lightgray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.addContact {
+    margin: 0px;
+    background-color: lightgray;
+    color: rgb(53, 53, 53)
+
+}
+
+img {
+    margin-left: 70px;
+}
+
+.btn-left:not(:disabled):not(.disabled).active, 
+.btn-left:not(:disabled):not(.disabled):active, 
+.show>.btn-left.dropdown-toggle {
+ 
+    background-color: rgb(53, 53, 53);
+    border-width: 0px;
+}
+
+#contentArea {
+    margin-left: 220px;
+    margin-top: 50px;
+
+}
+
+#viewcell {
+    border-radius: 25px;
+    border: 2px solid;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    margin:20px;
+    padding: 10px;
+}
+
+#spacercell {
+    margin:20px;
+    padding: 10px;
+}
+
+input {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
