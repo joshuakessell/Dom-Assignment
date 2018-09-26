@@ -55,6 +55,11 @@ img {
 
 }
 
+.contentRow {
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
 #viewcell {
     border-radius: 25px;
     border: 2px solid;
