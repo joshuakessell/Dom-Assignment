@@ -1,5 +1,5 @@
 body {
-     
+    font-size: 14px;
     background-color: white;
 }
 
@@ -49,13 +49,13 @@ img {
     border-width: 0px;
 }
 
-#contentArea {
+.contentArea {
     margin-left: 220px;
     margin-top: 50px;
 
 }
 
-.contentRow {
+.formRow {
     margin-left: 260px;
     margin-top: 20px;
 }
