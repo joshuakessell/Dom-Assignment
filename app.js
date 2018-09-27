@@ -79,8 +79,36 @@ const setVerify = function(e) {
 
 const setUpdate = function(e) {
     e.preventDefault();
-    $('#contentArea').empty();
+    $('.contentArea').empty();
+    $('.formRow').empty();
 
+    $('.formRow').html(`<form name ="updateForm">
+        Employee name: 
+        <input type="text" id="name" >
+        New Office: 
+        <input type="text" id="newoffice">
+        New Phone: 
+        <input type="text" id="newphone">
+        <input type ="button" id="updateContact" class="btn" value="Update" onclick="updateContact">
+        </form>`);
+
+    const updateContact = function(e) {
+        $('.contentArea').empty();
+        let nameCheck = $("#name").val();
+        let flag = true;
+        for(let i=0;i<employeeList.length; i++) {
+            if(nameCheck === employeeList[i].name){
+                employeeList[i].officeNum = parseInt($("#newoffice").val());
+                employeeList[i].phoneNum = $("#newphone").val();
+                alert(`${nameCheck} has been successfully updated!`);
+                flag = false;
+            }
+        }
+        if (flag) {
+            alert("No employee found by that name.");
+        }
+    }
+    $('#updateContact').on('click', updateContact);
 }
 
 
