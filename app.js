@@ -116,15 +116,43 @@ const setUpdate = function(e) {
 
 const setDelete = function(e) {
     e.preventDefault();
-    $('#contentArea').empty();
+    $('.contentArea').empty();
+    $('.formRow').empty();
 
+    $('.formRow').html(`<form name ="deleteForm">
+        Employee name: 
+        <input type="text" id="deleteName">
+        <input type ="button" id="deleteContact" class="btn" value="Delete" onclick="deleteContact">
+        </form>`);
+
+    const deleteContact = function(e) {
+        $('.contentArea').empty();
+        let nameCheck = $("#deleteName").val();
+        let flag = true;
+        for(let i=0;i<employeeList.length; i++) {
+            if(nameCheck === employeeList[i].name){
+                for(let j=i+1; j<employeeList.length; j++) {
+                    employeeList[j-1] = employeeList[j];
+                }
+                delete employeeList[employeeList.length];
+                alert(`${nameCheck} has been successfully deleted!`);
+                flag = false;
+            }
+        }
+        if (flag) {
+            alert("No employee found by that name.");       
+        }    
+        for (let i = 0; i < employeeList.length; i++) {
+            $('.contentArea').append(`<div class="content-row"><div class="col-md-6" id="viewcell" value=${i}> Name: ${employeeList[i].name}<br><br> Office: ${employeeList[i].officeNum}<br><br> Phone: ${employeeList[i].phoneNum}</div><div class="col-md-6" id="spacercell"></div>`);
+        }
+    }     
+    $('#deleteContact').on('click', deleteContact);
 }
 
 
 //event listeners
 $('.view').on('click', setView);
 $('.add').on('click', setAdd);
-
 $('.verify').on('click', setVerify);
 $('.update').on('click', setUpdate);
 $('.delete').on('click', setDelete);
